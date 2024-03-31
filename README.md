@@ -25,3 +25,5 @@ All commands are run from the root of the project, from a terminal:
 
 And that should be everything!
 For more information see the Astro's [documentation](https://docs.astro.build).
+
+> [mbrdg](mailto:migb.rodrigues@gmail.com)
