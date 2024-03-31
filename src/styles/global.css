@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-y: scroll;
+  color-scheme: light;
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply bg-neutral-100 dark:bg-neutral-900;
+  @apply text-black/50 dark:text-white/75;
+}
+
+h1 {
+  @apply text-xl font-bold;
+  @apply text-black dark:text-white;
+}
+
+h2 {
+  @apply text-xl font-semibold;
+  @apply text-black dark:text-white;
+}
