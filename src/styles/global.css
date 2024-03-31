@@ -26,3 +26,10 @@ h2 {
   @apply text-xl font-semibold;
   @apply text-black dark:text-white;
 }
+
+a {
+  cursor: pointer;
+  @apply underline underline-offset-2;
+  @apply decoration-black/10 dark:decoration-white/90;
+  @apply hover:decoration-black/50 dark:hover:decoration-white/50;
+}
