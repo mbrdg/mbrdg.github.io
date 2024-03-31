@@ -14,7 +14,7 @@ html {
 body {
   @apply font-sans antialiased;
   @apply bg-neutral-100 dark:bg-neutral-900;
-  @apply text-black/50 dark:text-white/75;
+  @apply text-black/75 dark:text-white/75;
 }
 
 h1 {
@@ -31,5 +31,5 @@ a {
   cursor: pointer;
   @apply underline underline-offset-2;
   @apply decoration-black/90 dark:decoration-white/90;
-  @apply hover:decoration-black/50 dark:hover:decoration-white/50;
+  @apply hover:decoration-black/30 dark:hover:decoration-white/50;
 }
