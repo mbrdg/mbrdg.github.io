@@ -1,0 +1,17 @@
+---
+interface Props {
+  date: Date;
+  author: string;
+}
+
+const formatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "2-digit",
+  year: "numeric"
+});
+
+const { date, author } = Astro.props;
+---
+
+<time datetime={date.toString()}>{formatter.format(date)}</time>
+<address>{author}</address>

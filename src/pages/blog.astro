@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import "../styles/global.css";
+import MainLayout from "@layouts/MainLayout.astro";
+import Section from "@components/Section.astro";
+
+const allPosts = await getCollection("posts");
+---
+
+<MainLayout title="My blog" description="List of all blog posts">
+  <Section title="Posts &#x1F4DD">
+    {allPosts.map(post => (<a href={`/posts/${post.slug}/`}>{post.data.title}</a>))}
+  </Section>
+</MainLayout>
