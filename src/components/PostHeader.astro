@@ -15,7 +15,7 @@ const { publication, author, minutesRead } = Astro.props;
 ---
 
 <p class="not-prose">
-  <time datetime={publication}>{formatter.format(publication)}</time>
+  <time datetime={publication.toString()}>{formatter.format(publication)}</time>
   &bull; {minutesRead}
   <address>{author}</address>
 </p>
