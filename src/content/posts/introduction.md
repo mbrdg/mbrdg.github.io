@@ -1,12 +1,13 @@
 ---
-title: 'Intro'
-pubDate: 2024-04-01
+title: 'Introduction'
+publication: 2024-04-01
 description: 'My first blog post!'
 author: 'Miguel Rodrigues'
 tags: ["meta"]
+draft: false
 ---
 
-# Intro
+# Introduction
 
 > Welcome my son\
 > Welcome to the machine
