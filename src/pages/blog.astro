@@ -1,11 +1,38 @@
 ---
 import { getCollection } from "astro:content";
+
 import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
+import PostCard from "@components/PostCard.astro";
 
 const allPosts = await getCollection("posts");
+const postsByYear = Object.groupBy(
+  allPosts, 
+  ({ data }) => data.pubDate.getFullYear()
+);
+const years = Object.keys(postsByYear).sort().reverse();
 ---
 
-<MainLayout title="My blog" description="List of all blog posts">
-    {allPosts.map(post => (<a href={`/posts/${post.slug}/`}>{post.data.title}</a>))}
+<MainLayout title="Coffee & State Sync" description="List of Blog Posts">
+  <article class="mx-auto max-w-screen-sm px-5 py-4">
+    <h1>Posts</h1>
+    {
+      years.map(year => (
+        <section>
+        <h2>{year}</h2>
+        <ul class="not-prose flex flex-col gap-4">
+        { 
+          postsByYear[year].map(post => (
+            <PostCard
+              url={`/posts/${post.slug}`} 
+              title={post.data.title}
+              description={post.data.description}
+            />
+          ))
+        }
+        </ul>
+        </section>
+      ))
+    }
+  </article>
 </MainLayout>

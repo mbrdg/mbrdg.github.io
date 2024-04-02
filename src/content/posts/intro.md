@@ -1,7 +1,7 @@
 ---
 title: 'Intro'
 pubDate: 2024-04-01
-description: 'My first blog post'
+description: 'My first blog post!'
 author: 'Miguel Rodrigues'
 tags: ["meta"]
 ---

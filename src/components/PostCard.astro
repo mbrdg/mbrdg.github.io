@@ -1,0 +1,19 @@
+---
+interface Props {
+  url: string;
+  title: string;
+  description: string;
+}
+
+const { url, title, description } = Astro.props;
+---
+
+<li class="
+  py-2 px-3 rounded-lg border border-black/20 dark:border-white/20
+  hover:bg-black/10 dark:hover:bg-white/10 hover:text-black dark:hover:text-white
+">
+  <a class="no-underline" href={url}>
+    <h3 class="underline font-semibold">{title}</h3>
+    <p class="prose dark:prose-invert">{description}</p>
+  </a>
+</li>
