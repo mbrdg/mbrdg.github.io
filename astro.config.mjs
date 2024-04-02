@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
+import { remarkReadingTime } from './remark-reading-time.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,4 +12,7 @@ export default defineConfig({
       nesting: true,
     }),
   ],
+  markdown: {
+    remarkPlugins: [remarkReadingTime],
+  }
 });

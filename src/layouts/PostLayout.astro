@@ -8,7 +8,11 @@ const { frontmatter } = Astro.props;
 
 <MainLayout title={frontmatter.title} description={frontmatter.description}>
   <article class="mx-auto max-w-screen-sm px-5 py-4">
-    <PostHeader date={frontmatter.publication} author={frontmatter.author}/>
+    <PostHeader 
+      publication={frontmatter.publication} 
+      minutesRead={frontmatter.minutesRead}
+      author={frontmatter.author}
+    />
     <slot />
   </article>
 </MainLayout>

@@ -1,7 +1,8 @@
 ---
 interface Props {
-  date: Date;
+  publication: Date;
   author: string;
+  minutesRead: string;
 }
 
 const formatter = new Intl.DateTimeFormat("en-US", {
@@ -10,8 +11,11 @@ const formatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric"
 });
 
-const { date, author } = Astro.props;
+const { publication, author, minutesRead } = Astro.props;
 ---
 
-<time datetime={date.toString()}>{formatter.format(date)}</time>
-<address>{author}</address>
+<p class="not-prose">
+  <time datetime={publication}>{formatter.format(publication)}</time>
+  &bull; {minutesRead}
+  <address>{author}</address>
+</p>
