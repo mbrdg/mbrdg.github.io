@@ -8,10 +8,10 @@ tags: ["meta"]
 
 # Intro
 
-> Welcome my son
+> Welcome my son\
 > Welcome to the machine
 > 
-> -- Roger Waters
+> Roger Waters
 
 This post serves as an introduction to test if everything is working properly.
 I'm looking forward to write about various interesting topics, especially,

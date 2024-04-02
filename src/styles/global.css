@@ -33,3 +33,9 @@ a {
   @apply decoration-black/90 dark:decoration-white/90;
   @apply hover:decoration-black/30 dark:hover:decoration-white/50;
 }
+
+article {
+  @apply max-w-full prose prose-neutral dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-semibold prose-p:font-serif;
+  @apply prose-headings:text-black prose-headings:dark:text-white;
+}

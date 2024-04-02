@@ -1,29 +1,35 @@
 ---
 import "../styles/global.css";
 import MainLayout from '@layouts/MainLayout.astro';
-import Section from '@components/Section.astro';
 ---
 
 <MainLayout title="Coffee & State Sync" description="About Me">
-  <Section title="Hi, I'm Miguel &#x1F44B"
-    <p>
-      I am an engineering student at
-      <a href="https://fe.up.pt">University of Porto</a> from Portugal.
-    </p>
-    <p>
-      I am especially interested in <em>programming</em> and in
-      <em>design and architecture</em> of software systems.
-      I see myself as <em>curious</em> person who aspires to bring a positive
-      change to the world through software.
-      I firmly believe that software should help and enhance one's capabilities.
-    </p>
-    <p>And yeah... I enjoy coffee &#x2615</p>
-  </Section>
-  <Section title="Let's Connect!">
-    <ul class="flex items-center space-x-4">
-      <li><a href="mailto:migb.rodrigues@gmail.com">Email</a></li>
-      <li><a href="https://github.com/mbrdg/">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/mbrdg/">LinkedIn</a></li>
-    </ul>
-  </Section>
+  <article class="mx-auto max-w-screen-sm px-5 py-4">
+    <h1>Hi, I'm Miguel &#x1F44B</h1>
+
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am an engineering student at
+        <a href="https://fe.up.pt">University of Porto</a> from Portugal.
+      </p>
+      <p>
+        I am especially interested in <em>programming</em> and in
+        <em>design and architecture</em> of software systems. I see myself as
+        <em>curious</em> person who aspires to bring a positive change to the
+        world through software.
+        I firmly believe that software should help and enhance one's capabilities.
+      </p>
+      <p>And yeah... I enjoy coffee &#x2615</p>
+    </section>
+
+    <section>
+      <h2>Let's Connect!</h2>
+      <ul class="flex items-center space-x-4 not-prose">
+        <li><a href="mailto:migb.rodrigues@gmail.com">Email</a></li>
+        <li><a href="https://github.com/mbrdg/">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/mbrdg/">LinkedIn</a></li>
+      </ul>
+    </section>
+  </article>
 </MainLayout>
