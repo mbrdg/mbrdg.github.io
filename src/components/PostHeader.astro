@@ -14,8 +14,8 @@ const formatter = new Intl.DateTimeFormat("en-US", {
 const { publication, author, minutesRead } = Astro.props;
 ---
 
-<p class="not-prose">
+<hgroup class="not-prose">
   <time datetime={publication.toString()}>{formatter.format(publication)}</time>
   &bull; {minutesRead}
   <address>{author}</address>
-</p>
+</hgroup>

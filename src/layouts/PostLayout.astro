@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 import PostHeader from "@components/PostHeader.astro";
+import PostFooter from "@components/PostFooter.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -14,5 +15,6 @@ const { frontmatter } = Astro.props;
       author={frontmatter.author}
     />
     <slot />
+    <PostFooter tags={frontmatter.tags} />
   </article>
 </MainLayout>
