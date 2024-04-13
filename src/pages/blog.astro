@@ -1,5 +1,5 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 
 import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
@@ -8,21 +8,10 @@ import PostCard from "@components/PostCard.astro";
 const allPosts = await getCollection("posts");
 const publishedPosts = allPosts.filter(({ data }) => !data.draft);
 
-// This is more efficient but does not work in CI
-// const postsByYear = Object.groupBy(
-//   publishedPosts,
-//   ({ data }) => data.publication.getFullYear()
-// );
-
-type Acc = {
-  [year: number]: CollectionEntry<"posts">[];
-}
-
-const postsByYear = publishedPosts.reduce((acc: Acc, post: CollectionEntry<"posts">) => {
-  const year = post.data.publication.getFullYear();
-  (acc[year] = acc[year] || []).push(post);
-  return acc;
-}, {});
+const postsByYear = Object.groupBy(
+  publishedPosts,
+  ({ data }) => data.publication.getFullYear()
+);
 
 const years = Object.keys(postsByYear).sort().reverse();
 ---
@@ -36,7 +25,7 @@ const years = Object.keys(postsByYear).sort().reverse();
         <h2>{year}</h2>
         <ul class="not-prose flex flex-col gap-4">
         { 
-          postsByYear[year].map((post: any) => (
+          postsByYear[year]?.map((post: any) => (
             <PostCard
               url={`/posts/${post.slug}`} 
               title={post.data.title}
