@@ -17,14 +17,6 @@ This post serves as an introduction to test if everything is working properly.
 I'm looking forward to write about various interesting topics, especially,
 *software and technology*.
 
-To test out a few things, below there is a `Hello World` written in Rust.
-
-```rust
-fn main() {
-  println!("Hello, World!");
-}
-```
-
 By the way, this blog is built with Astro.
 The theme was made by myself while taking inspiration from others such as:
 
