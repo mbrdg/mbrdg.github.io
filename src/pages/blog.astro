@@ -19,6 +19,8 @@ const years = Object.keys(postsByYear).sort().reverse();
 <MainLayout title="Coffee & State Sync" description="List of Blog Posts">
   <article class="mx-auto max-w-screen-sm px-5 py-4">
     <h1>Posts</h1>
+    {years.length == 0 && 
+     <blockquote>Wow! Feels so empty in here &#x1F47B<blockquote>}
     {
       years.map((year: any) => (
         <section>
