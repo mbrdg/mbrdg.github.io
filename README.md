@@ -1,6 +1,6 @@
 # Coffee & State Synchronization
 
-This repo holds all the contents in my personal website.
+This repo holds all the contents related to my personal website.
 
 The site is hosted through [GitHub pages](https://pges.github.com)
 and it is built with [Astro](https://astro.build).
