@@ -5,39 +5,41 @@ import "../styles/global.css";
 import MainLayout from "@layouts/MainLayout.astro";
 import PostCard from "@components/PostCard.astro";
 
-const allPosts = await getCollection("posts");
-const publishedPosts = allPosts.filter(({ data }) => !data.draft);
+const publishedBlogEntries = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
+});
 
-const postsByYear = Object.groupBy(
-  publishedPosts,
+const publishedBlogEntriesByYear = Object.groupBy(
+  publishedBlogEntries,
   ({ data }) => data.publication.getFullYear()
 );
 
-const years = Object.keys(postsByYear).sort().reverse();
+const years = Object.keys(publishedBlogEntriesByYear).sort().reverse();
+const emptyBlogCollection = years.length === 0;
 ---
 
 <MainLayout title="Coffee & State Sync" description="List of Blog Posts">
   <article class="mx-auto max-w-screen-sm px-5 py-4">
     <h1>Posts</h1>
-    {years.length == 0 && 
-     <blockquote>Wow! Feels so empty in here &#x1F47B<blockquote>}
     {
       years.map((year: any) => (
         <section>
-        <h2>{year}</h2>
-        <ul class="not-prose flex flex-col gap-4">
-        { 
-          postsByYear[year]?.map((post: any) => (
-            <PostCard
-              url={`/posts/${post.slug}`} 
-              title={post.data.title}
-              description={post.data.description}
-            />
-          ))
-        }
-        </ul>
+          <h2>{year}</h2>
+          <ul class="not-prose flex flex-col gap-4">
+          {
+            publishedBlogEntriesByYear[year]?.map((post: any) => (
+              <PostCard
+                url={`/posts/${post.slug}`}
+                title={post.data.title}
+                description={post.data.description}
+              />
+            ))
+          }
+          </ul>
         </section>
       ))
     }
+    {emptyBlogCollection &&
+     <blockquote>Wow! Feels so empty in here &#x1F47B<blockquote>}
   </article>
 </MainLayout>
