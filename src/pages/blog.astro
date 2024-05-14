@@ -11,7 +11,7 @@ const publishedBlogEntries = await getCollection("blog", ({ data }) => {
 
 const publishedBlogEntriesByYear = Object.groupBy(
   publishedBlogEntries,
-  ({ data }) => data.publication.getFullYear()
+  ({ data }) => data.pubDate.getFullYear()
 );
 
 const years = Object.keys(publishedBlogEntriesByYear).sort().reverse();
