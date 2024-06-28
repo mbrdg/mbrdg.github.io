@@ -2,7 +2,7 @@
 
 This repo holds all the contents related to my personal website.
 
-The site is hosted through [GitHub pages](https://pges.github.com)
+The site is hosted through [GitHub pages](https://pages.github.com)
 and it is built with [Astro](https://astro.build).
 
 ## Dependencies
